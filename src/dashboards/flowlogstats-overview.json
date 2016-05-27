@@ -1,0 +1,101 @@
+{
+  "id": null,
+  "title": "FlowLogStats: Overview",
+  "originalTitle": "FlowLogStats: Overview",
+  "tags": ["FlowLogStats"],
+  "style": "dark",
+  "timezone": "browser",
+  "editable": false,
+  "hideControls": true,
+  "sharedCrosshair": false,
+  "rows": [
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "125px",
+        "panels": [
+          {
+            "content": "FlowLog Stats Overview",
+            "editable": true,
+            "error": false,
+            "id": 2,
+            "links": [],
+            "mode": "html",
+            "span": 12,
+            "style": {},
+            "title": "",
+            "transparent": true,
+            "type": "text"
+          }
+        ],
+        "title": ""
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "330px",
+        "panels": [
+	  {
+            "editable": true,
+            "error": false,
+            "id": 1,
+            "span": 12,
+            "title": "",
+            "type": "flowevent-map"
+          }
+        ],
+        "title": "Row"
+      },
+      {
+        "collapse": false,
+        "editable": true,
+        "height": "250px",
+        "panels": [],
+        "title": "Endpoint List Row"
+      }
+    ],
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {
+      "collapse": false,
+      "enable": true,
+      "notice": false,
+      "now": true,
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "type": "timepicker"
+    },
+    "templating": {
+      "list": []
+    },
+    "annotations": {
+      "list": []
+    },
+    "schemaVersion": 7,
+    "version": 3,
+    "links": []
+  }

@@ -1,0 +1,104 @@
+{
+  "type": "app",
+  "name": "FlowLogStats",
+  "id": "flowlogstats-app",
+
+  "routes": [
+    {
+      "path": "api/*",
+      "method": "*",
+      "url": "<path_to_rest_api>",
+      "reqSignedIn": true,
+      "reqRole": "Viewer",
+      "headers": [
+        { "name": "Authorization", "content": "Bearer {{.SecureJsonData.apiKey}}"}
+      ]
+    },
+    {
+      "path": "api/elasticsearch/*",
+      "method": "*",
+      "url": "https://<path_to_rest_elsearch>/api/elasticsearch",
+      "reqSignedIn": true,
+      "reqRole": "Viewer",
+      "headers": [
+        { "name": "Authorization", "content": "Bearer {{.SecureJsonData.apiKey}}"}
+      ]
+    },
+    {
+      "path": "api/*",
+      "method": "PUT,POST,DELETE",
+      "url": "<url_to_rest_api>",
+      "reqSignedIn": true,
+      "reqRole": "Editor",
+      "headers": [
+        { "name": "Authorization", "content": "Bearer {{.SecureJsonData.apiKey}}"}
+      ]
+    },
+    {
+      "path": "api/*",
+      "method": "GET",
+      "url": "<url_to_rest_api>",
+      "reqSignedIn": true,
+      "reqRole": "Viewer",
+      "headers": [
+        { "name": "Authorization", "content": "Bearer {{.SecureJsonData.apiKey}}"}
+      ]
+    }
+  ],
+
+  "info": {
+    "description": "flowlogstats",
+    "author": {
+      "name": "FlowLogStats Inc.",
+      "url": "https://www.flowlog-stats.com"
+    },
+    "keywords": ["flowlogstats", "recon", "network"],
+    "logos": {
+      "small": "img/flowlogstats_logo.png",
+      "large": "img/flowlogstats_logo.png"
+    },
+    "links": [
+      {"name": "flowlogstats", "url": "http://flowlogstats.io"},
+      {"name": "GitHub", "url": "https://github.com/"},
+      {"name": "License", "url": "https://github.com/"}
+    ],
+    "screenshots": [
+      {"name": "FlowLog Stats Screenshot", "path": "src/img/1.png"}
+    ],
+    "version": "0.0.1",
+    "updated": "2016-05-27"
+  },
+
+  "includes": [
+    {
+      "type": "dashboard",
+      "name": "FlowLogStats Home",
+      "path": "dashboards/flowlogstats-home.json",
+      "addToNav": true,
+      "defaultNav": true
+    },
+    {
+      "type": "dashboard",
+      "name": "FlowLogStats: Overview",
+      "path": "dashboards/flowlogstats-overview.json",
+      "addToNav": false 
+    },
+    {
+      "type": "dashboard",
+      "name": "FlowLogStats: Chord",
+      "path": "dashboards/flowlogstats-chord.json",
+      "addToNav": false
+    },
+    {
+      "type": "dashboard",
+      "name": "FlowLogStats: Threatlist",
+      "path": "dashboards/flowlogstats-threatlist.json",
+      "addToNav": false
+    }
+  ],
+
+  "dependencies": {
+    "grafanaVersion": "3.0+",
+    "plugins": []
+  }
+}
